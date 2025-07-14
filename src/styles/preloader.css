@@ -1,0 +1,21 @@
+/* src/styles/preloader.css */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease-in-out;
+  background-color: black;
+  opacity: 1;
+  z-index: 9999;
+}
+
+.preloader.fade-out {
+  opacity: 0;
+}
+
+.canvas-background {
+  width: 100%;
+  height: 100%;
+}

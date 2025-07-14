@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ⛅ Weather App
 
 A stylish and animated React + TypeScript weather application that fetches real-time weather data and displays it beautifully with themed UI, cloud-based loaders, and interactive forecast modals.
@@ -91,3 +92,8 @@ Santhi Ch
 Front-End Developer | React Enthusiast
 GitHub: @Santhich
 ```
+=======
+# Weather App by Santhi
+
+This is a beautiful weather app with loading animations, temperature-based UI, and 5-day forecast modal.
+>>>>>>> f87589d2e0568a15d636e588376f4874893de02e

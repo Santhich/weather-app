@@ -1,16 +1,16 @@
 // src/components/Preloader.tsx
 import React, { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Stars, OrbitControls, Text } from "@react-three/drei";
 import * as THREE from "three";
 import "../styles/preloader.css";
 
-// Props
+// Props for Preloader
 type PreloaderProps = {
   fadeOut?: boolean;
 };
 
-// 3D Cloud Loader
+// Animated Cloud Loader (rotating spheres)
 const CloudLoader = () => {
   const groupRef = useRef<THREE.Group>(null!);
 
@@ -36,9 +36,14 @@ const CloudLoader = () => {
   );
 };
 
-// Text facing camera
+// Text that always faces the camera and is responsive
 const BillboardText = () => {
   const textRef = useRef<THREE.Mesh>(null!);
+  const { viewport } = useThree();
+
+  // Responsive font size based on screen width
+  const fontSize = viewport.width < 6 ? 0.18 : 0.28;
+
   useFrame(({ camera }) => {
     if (textRef.current) {
       textRef.current.lookAt(camera.position);
@@ -49,7 +54,7 @@ const BillboardText = () => {
     <Text
       ref={textRef}
       position={[0, -1.2, 0]}
-      fontSize={0.28}
+      fontSize={fontSize}
       color="white"
       anchorX="center"
       anchorY="middle"
@@ -59,6 +64,7 @@ const BillboardText = () => {
   );
 };
 
+// Main Preloader component
 const Preloader: React.FC<PreloaderProps> = ({ fadeOut = false }) => {
   return (
     <div className={`preloader ${fadeOut ? "fade-out" : ""}`}>

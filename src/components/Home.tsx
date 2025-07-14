@@ -144,7 +144,7 @@ const fetchWeather = async () => {
       <div className="content">
         {/* Typing animation intro */}
         {!hideTyping && (
-          <h1 className="typing-text">Type your city to see what the sky says today ☁️</h1>
+          <h1 className="typing-text">Let's find the weather where you are... 🌍</h1>
         )}
 
         {showMain && (

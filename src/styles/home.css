@@ -447,9 +447,20 @@ body {
     font-size: 0.95rem;
     border-radius: 15px;
   }
-
+  
+  .main-title {
+    font-size: 2rem;
+  }
+ .main-header {
+    font-size: 1.5rem;
+  }
   .weather-display p {
     margin: 8px 0;
+    font-size: 1rem;
+  }
+  .search-bar {
+    width: 80%;
+    padding: 10px 18px;
     font-size: 1rem;
   }
 
